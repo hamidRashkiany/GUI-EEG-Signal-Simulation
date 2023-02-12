@@ -1,35 +1,13 @@
 #Tutorial link: https://ataspinar.com/2018/04/04/machine-learning-with-signal-processing-techniques/
 from mpl_toolkits.mplot3d import Axes3D
-import numpy as np
-import matplotlib.pyplot as plt
-# t_n = 10
-# N = 1000
-# T = t_n / N
-# f_s = 1/T
-# x_value = np.arange(0,t_n,1/N)
-# amplitudes = [4, 6, 8, 10, 14]
-# frequencies = [6.5, 5, 3, 1.5, 1]
-# y_values = [amplitudes[ii]*np.sin(2*np.pi*frequencies[ii]*x_value) for ii in range(0,len(amplitudes))]
-# composite_y_value = np.sum(y_values, axis=0)
-# # print("====================")
-# # print(y_values)
-# # composite_y_value = np.sum(y_values, axis=0)
-# # print("========================")
-# # print(composite_y_value)
-# plt.plot(x_value,composite_y_value)
-# plt.show()
 from tkinter import *
 from math import *
-import math
 import matplotlib.pyplot as plt
 import numpy as np
 from numpy.fft import fftfreq, ifft
 import pandas as pd
 from scipy.fft import fft,ifft
 homePage=Tk()
-# screen_width=homePage.winfo_screenwidth()
-# screen_height=homePage.winfo_screenheight()
-# homePage.geometry("%dx%d+0+0"%(screen_width,screen_height))
 homePage.geometry("1000x300")
 frm1=Frame(homePage)
 frm1.place(x=0,y=0)
@@ -42,7 +20,6 @@ entryStartPoint.grid(row=0,column=3)
 lblEndPoint=Label(frm1,text="Enter the end time").grid(row=0,column=4,sticky=W)
 entryEndPoint=Entry(frm1,width=5)
 entryEndPoint.grid(row=0,column=5)
-
 
 #Create to show Beta signal
 lblfBeta=Label(frm1,text="Enter the Beta's frequency (Beta>13Hz)").grid(row=1,column=0,sticky=W)
@@ -70,6 +47,7 @@ entryfAlpha.grid(row=2,column=1)
 lblAAlpha=Label(frm1,text="Enter the amplitude of Alpha's frequency (Action potential>+40mv)").grid(row=2,column=2,sticky=W)
 entryAAlpha=Entry(frm1,width=5)
 entryAAlpha.grid(row=2,column=3)
+
 def showAlphaSignal():
     try:
         N=int(entryNumberOfSamples.get())*(int(entryEndPoint.get())-int(entryStartPoint.get()))
@@ -89,6 +67,7 @@ entryfTheta.grid(row=3,column=1)
 lblATheta=Label(frm1,text="Enter the amplitude of Theta's frequency (Action potential>+40mv)").grid(row=3,column=2,sticky=W)
 entryATheta=Entry(frm1,width=5)
 entryATheta.grid(row=3,column=3)
+
 def showThetaSignal():
     try:
         N=int(entryNumberOfSamples.get())*(int(entryEndPoint.get())-int(entryStartPoint.get()))
@@ -108,6 +87,7 @@ entryfDelta.grid(row=4,column=1)
 lblADelta=Label(frm1,text="Enter the amplitude of Delta's frequency (Action potential>+40mv)").grid(row=4,column=2,sticky=W)
 entryADelta=Entry(frm1,width=5)
 entryADelta.grid(row=4,column=3)
+
 def showDeltaSignal():
     try:
         N=int(entryNumberOfSamples.get())*(int(entryEndPoint.get())-int(entryStartPoint.get()))
@@ -120,9 +100,6 @@ def showDeltaSignal():
         print("Value is not a number.")
 btnDisplayDelta=Button(frm1,text="Display Delta signal",command=showDeltaSignal)
 btnDisplayDelta.grid(row=4,column=4,sticky=W)
-#Create EEG Signal
-# class EEGSignal:
-#     def __init__(self):
 
 def createEEGSignal():
     try:
@@ -136,6 +113,7 @@ def createEEGSignal():
         print("This is not a number.")
 btnCreateEEG=Button(frm1,text="Generate EEG",command=createEEGSignal)
 btnCreateEEG.grid(row=5,column=0)
+
 def calculateFFTFunc():
     try:
         N=int(entryNumberOfSamples.get())*(int(entryEndPoint.get())-int(entryStartPoint.get()))
@@ -151,17 +129,3 @@ def calculateFFTFunc():
 btnCalculateFFT=Button(frm1,text="Calculate FFT of EEG",command=calculateFFTFunc)
 btnCalculateFFT.grid(row=5,column=1)
 homePage.mainloop()
-
-##############################33
-# homePage=Tk()
-# homePage.geometry("300x200")
-# entry1=Entry(homePage)
-# entry1.pack()
-# entry2=Entry(homePage)
-# entry2.pack()
-# def calculateFunc():
-#     sum=int(entry1.get())+int(entry2.get())
-#     print(sum)
-# btn=Button(homePage,text="calculate",command=calculateFunc)
-# btn.pack()
-# homePage.mainloop()
