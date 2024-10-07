@@ -1,5 +1,3 @@
 <h1>EEG Signal Simulation</h1>
 Release Version1 of EEG Signal Simulator (GUI Version).<br>
-This is the first version of one GUI simulator for EEG signal. This product can be utilized by neuroscience students to have a better comprehension of different components of one electroencephalogram (EEG) signal.
-One EEG signal consists of four main signals as Deltha, Alpha, Beta, Theta. Each of them has its own specification. With this GUI, you can easily simulate one EEG signal and have a visual demonestration of EEG signal.
-This application developed by pure Python and for run in your machine you are required to install a group of packages in your machine. All required packages are listed in requirement.txt file.
+This is the first iteration of a GUI simulator for EEG signals. This product is great for neuroscience students who want to get a better handle on the different components of an electroencephalogram (EEG) signal. An EEG signal is made up of four main signals: delta, alpha, beta and theta. Each one has its own characteristics. This GUI lets you easily simulate an EEG signal and see a visual demonstration of an EEG signal. It was developed using pure Python and runs on your machine. You just need to install a few packages to get it up and running. All the packages you need are listed in the requirement.txt file.
